@@ -1,0 +1,9 @@
+# Python dependencies for your application can be declared here and they will be installed in the runtime container.
+# Example packages listed below. Uncomment to use or add your own!
+# RPi.GPIO
+# imutils
+pandas
+numpy
+influxdb
+datetime
+django-environ

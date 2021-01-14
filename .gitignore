@@ -1,0 +1,7 @@
+__pycache__
+alwaysai.project.json
+alwaysai.target.json
+/models/*
+/venv/*
+.env
+core
