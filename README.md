@@ -4,7 +4,7 @@ Pose estimation with AlwaysAI (MMBOX)
 ## Setup
 This app requires an alwaysAI account. Head to the [Sign up page](https://alwaysai.co/auth?register=true) if you don't have an account yet. Follow the instructions to install the alwaysAI tools on your development machine. There's also instructions on this wiki. 
 
-Next, create an empty project to be used with this app. When you clone this repo, you can run aai app configure within the repo directory and your new project will appear in the list. Or you can choose to create a new project here. 
+Next, create an empty project to be used with this app. When you clone this repo, you can run aai app configure within the repo directory and your new project will appear in the list. Or you can choose to create a new project from the terminal. 
 
 ## Usage
 Once the alwaysAI tools are installed on your development machine (or edge device if developing directly on it) you can run the following CLI commands:
