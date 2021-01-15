@@ -10,25 +10,28 @@ Next, create an empty project to be used with this app. When you clone this repo
 Once the alwaysAI tools are installed on your development machine (or edge device if developing directly on it) you can run the following CLI commands:
 
 ###### Login to your AlwaysAI account through the CLI
-´´´
+```
 aai user login
-´´´
+```
 
 ###### To set up the target device & install path
-
-´aai app configure´
+```
+aai app configure
+```
 
 ###### To install the app to your target
-
-´aai app install´
+```
+aai app install
+```
 
 BE AWARE! The "Install python dependencies"-part may take FOREVER, like 40+ mins.  
 
 ###### Create a .env file and add credentials according to .env_template
 
 ###### To start the app
-
-´aai app start´
+```
+aai app start
+```
 
 While running, you can access the video stream in a browser at localhost:5000 or through the IP-address of your device followed by the port number (:5000).
 
