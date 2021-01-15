@@ -14,21 +14,21 @@ Once the alwaysAI tools are installed on your development machine (or edge devic
 aai user login
 ```
 
-###### To set up the target device & install path
+#### To set up the target device & install path
 ```
 aai app configure
 ```
 
-###### To install the app to your target
+#### To install the app to your target
 ```
 aai app install
 ```
 
 BE AWARE! The "Install python dependencies"-part may take FOREVER, like 40+ mins.  
 
-###### Create a .env file and add credentials according to .env_template
+#### Create a .env file and add credentials according to .env_template
 
-###### To start the app
+#### To start the app
 ```
 aai app start
 ```
@@ -37,6 +37,6 @@ While running, you can access the video stream in a browser at localhost:5000 or
 
 FUN FACT: You may need to restart the app sometimes if your'e not seeing any pose prints in the terminal. 
 
-###### To close the app
+#### To close the app
 
 The best way to stop the app right know is with Ctrl + C in the terminal. You can stop the streamer and the printer with the Stop-button in the browser app. But to stop the main thread, you'll need to use Ctrl + C. 
