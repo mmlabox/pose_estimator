@@ -34,7 +34,7 @@ aai app start
 
 While running, you can access the video stream in a browser at localhost:5000 or through the IP-address of your device followed by the port number (:5000).
 
-FUN FACT: You may need to restart the app sometimes if your'e not seeing any pose prints in the terminal. 
+FUN FACT: You may need to restart the app sometimes if your'e not seeing any dataframe prints in the terminal. This *may* have been fixed now, though.  
 
 #### To close the app
 
