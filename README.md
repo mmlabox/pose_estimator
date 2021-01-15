@@ -10,8 +10,9 @@ Next, create an empty project to be used with this app. When you clone this repo
 Once the alwaysAI tools are installed on your development machine (or edge device if developing directly on it) you can run the following CLI commands:
 
 ###### Login to your AlwaysAI account through the CLI
-
-´aai user login´
+´´´
+aai user login
+´´´
 
 ###### To set up the target device & install path
 
