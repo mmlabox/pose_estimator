@@ -105,7 +105,7 @@ def record_data(out_q, break_q):
         break_q.put(1)
 
 """
-A function for sending pose data to an InfluxDB instance. 
+A function for sending pose data to InfluxDB with a set time interval. 
 """
 def print_data(in_q, break_q):
     # Setup Django environment 
@@ -133,7 +133,7 @@ def print_data(in_q, break_q):
             break_q.put(1)
             break
         
-        time.sleep(5)
+        time.sleep(5)           # The delay in seconds between writes to the DB 
         poses = in_q.get()      # pop the data that's been put on "out_q" in the record_data function
          
         if len(poses) > 0:             # Check if people are detected (and if the pose detection has started)
