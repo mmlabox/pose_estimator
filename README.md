@@ -1,5 +1,5 @@
 # pose_estimator
-Pose estimation with AlwaysAI
+Pose estimation with AlwaysAI (MMBOX)
 
 ## Setup
 This app requires an alwaysAI account. Head to the [Sign up page](https://alwaysai.co/auth?register=true) if you don't have an account yet. Follow the instructions to install the alwaysAI tools on your development machine. There's also instructions on this wiki. 
