@@ -23,6 +23,8 @@ aai app install
 
 BE AWARE! The "Install python dependencies"-part may take FOREVER, like 40+ mins.  
 
+Create a .env file and add credentials according to .env_template
+
 To start the app
 
 aai app start
