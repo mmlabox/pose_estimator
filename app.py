@@ -118,14 +118,31 @@ def print_data(in_q, break_q):
     DB_HOST = env('DB_HOST')
     DB_USER = env('DB_USER')
     DB_PASSWORD = env('DB_PASSWORD')
-
-    client = DataFrameClient(
-        host=DB_HOST, 
-        port='8086', 
-        username=DB_USER, 
-        password=DB_PASSWORD, 
-        database='mmbox')
     
+    print("Connecting to InfluxDB...")
+    while True:
+
+        if break_q.qsize() > 0:
+            break_q.put(1)
+            break
+
+        try:
+            client = DataFrameClient(
+                host=DB_HOST, 
+                port='8086', 
+                username=DB_USER, 
+                password=DB_PASSWORD, 
+                database='mmbox')
+
+            ping = client.ping()
+            if ping:
+                print("YES!")
+                break
+        except:
+            continue
+    
+    print("Connected to InfluxDB v. " + ping)
+  
     # listening for data to send
     while True:
         # check if keyboard interrupt has been detected in the main thread
@@ -145,12 +162,12 @@ def print_data(in_q, break_q):
             # Alternative way to get unix timestamp
             #times = [time.time()]
             #df = pd.DataFrame(data=output, index=pd.to_datetime(times, unit='s', origin='unix'), columns=output)
-            
-            try: 
+             
+            try:
                 client.write_points(df, 'mmbox_video_pose', batch_size=1000)    # send dataframe to InfluxDB
             except:
-                print("Error writing to InfluxDB")
-                
+               print("Error writing to InfluxDB")
+    
             print(df)
        
     print("Printer stopped")
