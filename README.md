@@ -1,8 +1,8 @@
 # pose_estimator
-Pose estimation with AlwaysAI (MMBOX)
+Pose estimation with AlwaysAI for the MMBOX-project 
 
 ## Setup
-This app requires an alwaysAI account. Head to the [Sign up page](https://alwaysai.co/auth?register=true) if you don't have an account yet. Follow the instructions to install the alwaysAI tools on your development machine. There's also instructions on this wiki. 
+This app requires an alwaysAI account. Head to the [Sign up page](https://alwaysai.co/auth?register=true) if you don't have an account yet. Follow the instructions to install the alwaysAI tools on your development machine. There's also instructions on the [wiki page](https://github.com/mmlabox/pose_estimator/wiki). 
 
 Next, create an empty project to be used with this app. When you clone this repo, you can run aai app configure within the repo directory and your new project will appear in the list. Or you can choose to create a new project from the terminal. 
 
