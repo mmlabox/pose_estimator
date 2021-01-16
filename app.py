@@ -105,7 +105,8 @@ def record_data(out_q, break_q):
         break_q.put(1)
 
 """
-A function for sending pose data to InfluxDB with a set time interval. 
+A function for sending pose data to InfluxDB with a set time interval.
+Handles the connection to Influx. 
 """
 def print_data(in_q, break_q):
     # Setup Django environment 
@@ -120,6 +121,7 @@ def print_data(in_q, break_q):
     DB_PASSWORD = env('DB_PASSWORD')
     
     print("Connecting to InfluxDB...")
+    # Loop until connection is established, i.e. when an InfluxDB version nbr has been returned from ping() 
     while True:
 
         if break_q.qsize() > 0:
@@ -138,10 +140,10 @@ def print_data(in_q, break_q):
             if ping:
                 print("YES!")
                 break
-        except:
-            continue
+        except:             # Raised when client.ping() is called without an established connection
+            continue        # Ugly solution, I guess
     
-    print("Connected to InfluxDB v. " + ping)
+    print("Connected to InfluxDB v" + ping)
   
     # listening for data to send
     while True:
@@ -153,7 +155,7 @@ def print_data(in_q, break_q):
         time.sleep(5)           # The delay in seconds between writes to the DB 
         poses = in_q.get()      # pop the data that's been put on "out_q" in the record_data function
          
-        if len(poses) > 0:             # Check if people are detected (and if the pose detection has started)
+        if len(poses) > 0:      # Check if people are detected (and if the pose detection has started)
                 
             timestamp = time.time()
             dtidx = pd.DatetimeIndex(data=[pd.to_datetime(timestamp, unit='s', origin='unix')], name='Time')
